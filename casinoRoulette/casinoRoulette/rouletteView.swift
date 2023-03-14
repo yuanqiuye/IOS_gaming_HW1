@@ -126,6 +126,8 @@ struct rouletteView: View {
                         isAnimating = false
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5.9) {
+                        data.lastBetK = data.betK
+                        data.lastChipsInfo = data.chipsInfo
                         data.spinValue = num
                         dismiss()
                     }
@@ -153,6 +155,11 @@ struct rouletteView: View {
                         }
                         data.chipsInfo = []
                         data.betK = 0
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10.5) {
+                        if data.totalK < 0 {
+                            data.totalK = 3000
+                        }
                     }
                 }
                 .padding(40)

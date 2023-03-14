@@ -45,7 +45,8 @@ struct buttonView: View {
                 data.chipsInfo = []
             })
             GameButton(name: "goforward", fun: {
-                
+                data.betK = data.lastBetK
+                data.chipsInfo = data.lastChipsInfo
             })
             GameButton(name: "return", fun: {
                 if(data.chipsInfo.count>0){

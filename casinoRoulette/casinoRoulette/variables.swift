@@ -22,7 +22,9 @@ class UserData: ObservableObject {
     @Published var selectedChip: Chip = Chip.onek
     @Published var totalK: Int = 3000
     @Published var betK: Int = 0
+    @Published var lastBetK: Int = 0
     @Published var chipsInfo: [ChipInfo] = []
+    @Published var lastChipsInfo: [ChipInfo] = []
     @Published var isSpinning = false
     @Published var spinValue:Int = 0
     @Published var numArray: [numColor] = [.green, .red, .black, .red, .black, .red,.black, .red,.black, .red,.black, .black, .red,.black,.red,.black,.red,.black,.red,.red, .black, .red,.black, .red,.black, .red,.black, .red,.black, .black,.red, .black,.red, .black,.red, .black, .red]

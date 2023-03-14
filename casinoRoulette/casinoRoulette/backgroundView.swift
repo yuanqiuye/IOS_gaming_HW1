@@ -56,6 +56,13 @@ struct backgroundView: View {
                     .bold()
                     .frame(width: 300, alignment: .trailing)
                     .offset(x:-80,y:30)
+                if data.totalK < 0 {
+                    Text("Game Over!")
+                        .foregroundColor(.white)
+                        .font(.system(size: 30, design: .rounded))
+                        .bold()
+                        .offset(x:-10,y:90)
+                }
                 
                     
             }.offset(x:-80,y:-325)

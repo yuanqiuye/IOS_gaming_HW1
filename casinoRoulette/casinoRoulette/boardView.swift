@@ -47,8 +47,10 @@ struct Block: View {
             }
         }
         .onTapGesture {
-            data.chipsInfo.append(ChipInfo(index: index, type: data.selectedChip, rotate: rotate))
-            data.betK += data.selectedChip.value
+            if data.betK <= data.totalK - data.selectedChip.value {
+                data.chipsInfo.append(ChipInfo(index: index, type: data.selectedChip, rotate: rotate))
+                data.betK += data.selectedChip.value
+            }
         }
     }
 }
