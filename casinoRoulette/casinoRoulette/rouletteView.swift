@@ -157,7 +157,7 @@ struct rouletteView: View {
                         data.betK = 0
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 10.5) {
-                        if data.totalK < 0 {
+                        if data.totalK <= 0 {
                             data.totalK = 3000
                         }
                     }

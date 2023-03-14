@@ -47,6 +47,10 @@ struct buttonView: View {
             GameButton(name: "goforward", fun: {
                 data.betK = data.lastBetK
                 data.chipsInfo = data.lastChipsInfo
+                while(data.betK>data.totalK){
+                    data.betK -= data.chipsInfo.last!.type.value
+                    data.chipsInfo.removeLast()
+                }
             })
             GameButton(name: "return", fun: {
                 if(data.chipsInfo.count>0){
